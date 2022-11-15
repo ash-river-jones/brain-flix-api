@@ -1,0 +1,14 @@
+{
+  "name": "brain-flix-api",
+  "version": "1.0.0",
+  "description": "backend API for BrainFlix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ash Jones",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
