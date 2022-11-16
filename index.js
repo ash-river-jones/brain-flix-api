@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const videosRoutes = require('./routes/videos')
-const PORT = 2000;
+require('dotenv').config()
+const PORT = process.env.PORT || 2000
 
 app.use(cors())
 app.use(express.static('public'))

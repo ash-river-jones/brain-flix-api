@@ -24,7 +24,7 @@ router.route('/')
                 id: uuid(),
                 title: req.body.title,
                 channel: "Ash Jones",
-                image: "http://localhost:2000/images/imageUpload.jpg",
+                image: "images/imageUpload.jpg",
                 description: req.body.desc,
                 views: "0",
                 duration: "12:34",
