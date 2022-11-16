@@ -24,21 +24,13 @@ router.route('/')
                 id: uuid(),
                 title: req.body.title,
                 channel: "Ash Jones",
-                image: req.body.image,
+                image: "images/imageUpload.jpg",
                 description: req.body.desc,
                 views: "0",
                 duration: "12:34",
                 video:"https://project-2-api.herokuapp.com/stream",
                 timestamp: Date.now(),
-                comments:[
-                    {
-                        id: uuid(),
-                        name: "Santa",
-                        comment: "You're gonna get coal in your stocking",
-                        likes: 0,
-                        timestamp: Date.now()
-                    }
-                ]
+                comments:[]
             })
             fs.writeFileSync('./data/videos.json', JSON.stringify(videoListData))
             res.send("Video published to server")
