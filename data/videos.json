@@ -299,29 +299,5 @@
 				"timestamp": 1632496261000
 			}
 		]
-	},
-	{
-		"id": "4b016655-6c9b-40f8-99cd-0afafb813882",
-		"title": "test",
-		"channel": "Ash Jones",
-		"image": "images/imageUpload.jpg",
-		"description": "test",
-		"views": "0",
-		"duration": "12:34",
-		"video": "https://project-2-api.herokuapp.com/stream",
-		"timestamp": 1668628808603,
-		"comments": []
-	},
-	{
-		"id": "b9273598-5c27-4d7c-a1d1-d12d7275aa12",
-		"title": "Test",
-		"channel": "Ash Jones",
-		"image": "images/imageUpload.jpg",
-		"description": "We are going out for dinner and we will be home around noon and if I have a lot to go with the baby baby and then she got a dog that had the same name on it and it is okay but if you don’t think I need anything for my family yet so please let us know if you want to .",
-		"views": "0",
-		"duration": "12:34",
-		"video": "https://project-2-api.herokuapp.com/stream",
-		"timestamp": 1668638152466,
-		"comments": []
 	}
 ]
