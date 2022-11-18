@@ -50,6 +50,22 @@ router.route('/:id').get((req, res) => {
 	);
 });
 
+router.route('/:id/likes')
+    .put((req,res) =>{
+        const data = fs.readFileSync('./data/videos.json', 'utf-8');
+        const videoData = JSON.parse(data);
+        const foundVideo = videoData.find((video) => {
+                return video.id === req.params.id;
+            })
+        const foundVideoLikes = foundVideo.likes += 1
+        console.log(foundVideoLikes)
+        console.log(foundVideo.likes)
+        console.log(foundVideoLikes === foundVideo.likes)
+        fs.writeFileSync('./data/videos.json', JSON.stringify(videoData))
+        res.send("Video Liked")
+    });
+
+
 router.route('/:id/comments')
     .post((req,res) =>{
 	const data = fs.readFileSync('./data/videos.json', 'utf-8');
@@ -90,6 +106,7 @@ router.route('/:id/comments/:commentId')
         const indexOfComment = foundVideoComments.indexOf(foundComment)
         foundVideoComments.splice(indexOfComment,1)
         fs.writeFileSync('./data/videos.json', JSON.stringify(videoData))
+        res.send('Comment has been deleted successfully')
     })
 
 module.exports = router;
