@@ -50,7 +50,8 @@ router.route('/:id').get((req, res) => {
 	);
 });
 
-router.route('/:id/comments').post((req,res) =>{
+router.route('/:id/comments')
+    .post((req,res) =>{
 	const data = fs.readFileSync('./data/videos.json', 'utf-8');
     const commentData = JSON.parse(data);
     const videoId = req.params.id
@@ -72,5 +73,23 @@ router.route('/:id/comments').post((req,res) =>{
         res.send("You forgot to include json data in your request")
     }
 })
+
+router.route('/:id/comments/:commentId')
+    .delete((req,res)=>{
+        const data = fs.readFileSync('./data/videos.json', 'utf-8');
+        const videoData = JSON.parse(data);
+        const videoId = req.params.id
+        const commentId =req.params.commentId
+        const foundVideo = videoData.find((video) =>{
+            return video.id === videoId
+        })
+        const foundVideoComments = foundVideo.comments
+        const foundComment = foundVideoComments.find((comment) =>{
+            return comment.id === commentId
+        })
+        const indexOfComment = foundVideoComments.indexOf(foundComment)
+        foundVideoComments.splice(indexOfComment,1)
+        fs.writeFileSync('./data/videos.json', JSON.stringify(videoData))
+    })
 
 module.exports = router;
