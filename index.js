@@ -8,9 +8,8 @@ const PORT = process.env.PORT || 2000
 app.use(cors())
 app.use(express.static('public'))
 app.use(express.json())
-app.use((req,res,next)=>{
-	// console.log("middleware")
-	next()
+app.use(( _req, _res, next )=>{
+	next() 
 })
 
 
